@@ -1,0 +1,4 @@
+!Commands
+'!hello': Hello &user&!
+'!hug': '&user& hugs the fuck out of &arg1&!'
+'!test': '/w &user& Test'
