@@ -20,7 +20,7 @@ import org.pircbotx.hooks.types.GenericMessageEvent;
  */
 public class Bot extends ListenerAdapter {
 
-    public static PircBotX bot; //Test
+    public static PircBotX bot; //Test2
     public static Thread thread;
 
     @Override
