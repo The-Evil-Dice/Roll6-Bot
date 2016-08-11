@@ -53,18 +53,9 @@ public class GUI extends JFrame {
 
     public GUI() throws IOException {
         listener = new Listener();
-
-        setTitle("Roll6 Bot");
-        setSize(900, 600);
-        setResizable(false);
-        BufferedImage bg = ImageIO.read(getClass().getResource("favicon.png"));
-        setIconImage(bg);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        DEFpanel = new JPanel();
-        add(DEFpanel, BorderLayout.CENTER);
-        DEFpanel.setBorder(new EmptyBorder(5, 5, 5, 5));
-        DEFpanel.setLayout(new BorderLayout());
+        initialiseJFrame();
+        addDEFpanel();
+        createBTNpanel();
 
         CONSOLEpanel = new JPanel();
         CONSOLEpanel.setLayout(new BorderLayout());
@@ -90,7 +81,29 @@ public class GUI extends JFrame {
         tabs.add("Settings", new JPanel());
 
         DEFpanel.add(tabs, BorderLayout.CENTER);
-
+    }
+    
+    private void initialiseJFrame(){
+        try {
+            setTitle("Roll6 Bot");
+            setSize(900, 600);
+            setResizable(false);
+            BufferedImage bg = ImageIO.read(getClass().getResource("favicon.png"));
+            setIconImage(bg);
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void addDEFpanel(){
+        DEFpanel = new JPanel();
+        add(DEFpanel, BorderLayout.CENTER);
+        DEFpanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+        DEFpanel.setLayout(new BorderLayout());
+    }
+    
+    private void createBTNpanel(){
         BTNpanel = new JPanel();
         BTNpanel.setBorder(new EmptyBorder(5, 5, 5, 5));
         BTNpanel.setLayout(new BorderLayout());
@@ -125,6 +138,12 @@ public class GUI extends JFrame {
             String cmd = e.getActionCommand();
             switch (cmd) {
                 case "START":
+                    if(Main.config.getOAuth() == "" ||
+                            Main.config.getChannel() == "" ||
+                            Main.config.getUsername() == ""){
+                        Main.gui.printStream.println("[Roll6 Bot] > Could not connect! Check your settings!");
+                        break;
+                    }
                     Main.bot.configureBot();
                     button.setActionCommand("STOP");
                     button.setText("Stop");
