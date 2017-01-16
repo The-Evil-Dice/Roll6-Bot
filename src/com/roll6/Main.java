@@ -1,5 +1,8 @@
 package com.roll6;
 
+import com.roll6.gui.Console;
+import com.roll6.gui.GUIhandler;
+import com.roll6.config.Config;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,7 +14,7 @@ import java.util.logging.Logger;
 public class Main {
     
     public static Bot bot;
-    public static GUI gui;
+    public static GUIhandler gui;
     public static Config config;
     public static Console console;
 
@@ -19,8 +22,9 @@ public class Main {
         
         try {
             bot = new Bot();
-            gui = new GUI();
             config = new Config();
+            gui = new GUIhandler();
+            
             
             gui.setVisible(true);
         } catch (IOException ex) {

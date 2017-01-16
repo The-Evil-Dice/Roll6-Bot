@@ -1,6 +1,5 @@
 package com.roll6;
 
-import java.awt.Color;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,26 +24,27 @@ public class Bot extends ListenerAdapter {
 
     @Override
     public void onConnect(ConnectEvent event){
-        Main.gui.printStream.println("Roll6 Bot Connected!");
+        Main.gui.printToConsole("The Evil Bot Connected!");
     }
     
     @Override
     public void onDisconnect(DisconnectEvent event){
-        Main.gui.printStream.println("Bot Disconnected!");
+        Main.gui.printToConsole("The Evil Bot Disconnected!");
     }
     
     @Override
     public void onGenericMessage(GenericMessageEvent event) {
         String user = ((MessageEvent)event).getTags().get("display-name");
+        String colour = ((MessageEvent)event).getTags().get("color");
         String[] args = event.getMessage().split(" ");
         Boolean mod = Boolean.parseBoolean(((MessageEvent)event).getTags().get("moderator"));
         Boolean broadcaster = ((MessageEvent)event).getTags().get("badges").contains("broadcaster");
-        Main.gui.printStream.println(user+" > " + event.getMessage());
+        Main.gui.printToConsole(colour +" "+ user + " > " + event.getMessage());
         if (!mod && !broadcaster) {
             if (event.getMessage().matches("[A-Z]{" + Main.config.getMaxCaps() + ",}")) {
                 event.respondWith("/timeout " + user + " 1");
                 event.respondWith(user + " chat purged for exceeding max caps!");
-                Main.gui.printStream.println(Main.config.getUsername() + " > " + user + " chat purged for exceeding max caps!");
+                Main.gui.printToConsole(Main.config.getUsername() + " > " + user + " chat purged for exceeding max caps!");
                 return;
             }
             for (Object bannedWord : Main.config.returnBanned()) {
@@ -52,7 +52,7 @@ public class Bot extends ListenerAdapter {
                 if (event.getMessage().toLowerCase().contains(bannedWordString.toLowerCase())) {
                     event.respondWith("/timeout " + user + " 1");
                     event.respondWith(user + " chat purged for using banned word!");
-                    Main.gui.printStream.println(Main.config.getUsername() + " > " + user + " chat purged for using banned word!");
+                    Main.gui.printToConsole(Main.config.getUsername() + " > " + user + " chat purged for using banned word!");
                     return;
                 }
             }
@@ -74,7 +74,7 @@ public class Bot extends ListenerAdapter {
                         break;
                 }
                 event.respondWith(response);
-                Main.gui.printStream.println(Main.config.getUsername() + " > " + response);
+                Main.gui.printToConsole(Main.config.getUsername() + " > " + response);
                 return;
             }
         }
@@ -97,10 +97,10 @@ public class Bot extends ListenerAdapter {
 
             bot = new PircBotX(configuration);
             try {
-                Main.gui.printStream.println("Roll6 Bot Connecting...");
+                Main.gui.printToConsole("The Evil Bot Connecting...");
                 bot.startBot();
             } catch (IOException | IrcException ex) {
-                Logger.getLogger(Bot.class.getName()).log(Level.SEVERE, null, ex);
+                Main.gui.printToConsole(ex.getLocalizedMessage());
             }
         });
         thread.start();
