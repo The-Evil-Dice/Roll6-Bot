@@ -4,6 +4,8 @@ Though this will most likely be when the bot is a little more fully featured and
 
 Currently doing a complete rewrite of the bot using JavaFX instead of basic bitch Swing.
 
-Libraries: 
+Libraries:
+
 https://github.com/TheLQ/pircbotx - GNU GPL v3 Licensing
+
 https://github.com/EsotericSoftware/yamlbeans - MIT Licensing
