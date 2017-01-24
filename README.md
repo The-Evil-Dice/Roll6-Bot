@@ -12,6 +12,5 @@ Currently doing a complete rewrite of the bot using JavaFX instead of basic bitc
 * Pluggable Addons
 * Chat Overlay with CSS
 
-# Libraries:  
-* https://github.com/TheLQ/pircbotx - GNU GPL v3 Licensing
-* https://github.com/EsotericSoftware/yamlbeans - MIT Licensing
+# License
+Unfortunately due to the bot currently using PircbotX to connect with IRC, the project has to be licensed under GNU GPL v3. This is a pretty restrictive license as far as open source goes, they themselves were forced into using the license so they cannot be faulted. I only intend to use PircbotX for a limited time, until I make my own IRC connection API.
