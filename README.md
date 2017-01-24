@@ -12,6 +12,6 @@ Currently doing a complete rewrite of the bot using JavaFX instead of basic bitc
 * Pluggable Addons
 * Chat Overlay with CSS
 
-Libraries:  
+# Libraries:  
 * https://github.com/TheLQ/pircbotx - GNU GPL v3 Licensing
 * https://github.com/EsotericSoftware/yamlbeans - MIT Licensing
