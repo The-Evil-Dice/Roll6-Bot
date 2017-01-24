@@ -13,4 +13,4 @@ Currently doing a complete rewrite of the bot using JavaFX instead of basic bitc
 * Chat Overlay with CSS
 
 # License
-Unfortunately due to the bot currently using PircbotX to connect with IRC, the project has to be licensed under GNU GPL v3. This is a pretty restrictive license as far as open source goes, they themselves were forced into using the license so they cannot be faulted. I only intend to use PircbotX for a limited time, until I make my own IRC connection API.
+Unfortunately due to the bot currently using PircbotX to connect with IRC, the project has to be licensed under GNU GPL v3. This is a pretty restrictive license as far as open source goes, however they themselves were forced into using the license so they cannot be faulted. But, I only intend to use PircbotX for a limited time, until I make my own IRC connection API, then the restrictive licensing can be lifted.
