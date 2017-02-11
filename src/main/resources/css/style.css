@@ -1,0 +1,154 @@
+@import url("colours/Default-Dark.css");
+
+.tab-pane {
+    -fx-background-color: -base-01;
+    -fx-background-radius: 4px;
+}
+
+.console {
+    -fx-border-style: solid;
+    -fx-border-color: -base-03;
+    -fx-border-width: 2px;
+    -fx-border-radius: 2px;
+    -fx-background-color: -base-01;
+    /*-fx-padding: 10px;*/
+}
+
+.console-line {
+    -fx-background-color: transparent;
+    /*-fx-border-style: solid;
+    -fx-border-color: -base-02;
+    -fx-border-width: 0 0 1px 0;*/
+    -fx-text-fill: -base-05;
+    -fx-padding: 10px;
+}
+
+.console-text {
+    -fx-fill: -base-05;
+}
+
+.content {
+    -fx-background-color: -base-01;
+    -fx-border-style: solid;
+    -fx-border-color: -base-03;
+    -fx-border-width: 2px;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 2px;
+}
+
+.content > .title {
+    -fx-text-fill: -base-05;
+    -fx-font-weight: bolder;
+    -fx-padding: 10px;
+    -fx-background-color: -base-00;
+    -fx-vpos: top;
+    -fx-border-color: -base-0D;
+    -fx-border-width: 0 1px 0 0;
+}
+
+.label {
+    -fx-text-fill: -base-05;
+    -fx-font-weight: bolder;
+    //-fx-font-size: 10px;
+}
+
+.console-line-light {
+    -fx-background-color: -base-02;
+    -fx-text-fill: -base-05;
+    -fx-padding: 10px;
+    -fx-background-radius: 0;
+}
+
+.console-spacer {
+    -fx-border-style: solid;
+    -fx-border-color: -base-02;
+    -fx-border-width: 0 0 1px 0;
+    -fx-margin: 0 10px 0 10px;
+}
+
+.tab-content-area {
+    -fx-background-radius: 0 0 0 0;
+    -fx-background-color: -base-00;
+}
+
+.tab-pane:top > .tab-header-area > .tab-header-background {
+    -fx-background-color: -base-01;
+    -fx-background-insets: 0, 0 0 0 0, 0;
+    -fx-border-color: -base-0D;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.tab-pane:top *.tab-header-area {
+    -fx-padding: 5px 0 0 0;
+}
+
+.tab {
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0 1 0 1,0,0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab:selected {
+    -fx-border-color: -base-0D;
+    -fx-border-width: 3px 0 0 0;
+    -fx-background-color: -base-00;
+    -fx-background-insets: 0 0 0 0,0,0;
+}
+
+.tab .tab-label {
+    -fx-text-fill: -base-05;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-focus-color: transparent;
+}
+
+.input-area {
+    -fx-background-color: -base-01;
+    -fx-border-style: solid;
+    -fx-border-color: -base-03;
+    -fx-border-width: 2px;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 2px;
+    -fx-min-height: 40;
+    -fx-text-fill: -base-05;
+}
+
+.input-area-lg {
+    -fx-background-color: -base-01;
+    -fx-border-style: solid;
+    -fx-border-color: -base-03;
+    -fx-border-width: 2px;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 2px;
+    -fx-min-height: 50;
+    -fx-text-fill: -base-05;
+}
+
+.button {
+    -fx-background-color: -base-01;
+    -fx-border-style: solid;
+    -fx-border-color: -base-03;
+    -fx-border-width: 2px;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 2px;
+    -fx-text-fill: -base-03;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+.button-sm {
+    -fx-font-size: 18px;
+}
+
+.button:hover {
+    -fx-text-fill: -base-04;
+    -fx-font-weight: bold;
+}
+
+.button:pressed {
+    -fx-background-color: -base-02;
+}
